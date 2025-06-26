@@ -1,0 +1,1264 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+   <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Closed Deals - Más Ventas, Menos Esfuerzo</title>
+<meta name="robots" content="noindex, nofollow" />
+<script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Readex+Pro&display=swap" rel="stylesheet" />
+  
+
+  
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: '#f5bb23',
+                        'gold-dark': '#B8860B',
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+body {
+  background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.2'%3E %3Ccircle cx='2' cy='2' r='1.6'/%3E %3Ccircle cx='9' cy='3' r='1.6'/%3E %3Ccircle cx='16' cy='4' r='1.6'/%3E %3Ccircle cx='4' cy='10' r='1.6'/%3E %3Ccircle cx='13' cy='10' r='1.6'/%3E %3Ccircle cx='6' cy='17' r='1.6'/%3E %3Ccircle cx='15' cy='15' r='1.6'/%3E %3C/g%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 20px 20px;
+}
+
+   
+.gradient-text-h1 {
+  background: linear-gradient(135deg, #f5bb23, #ebba40, #e6e6e6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+  .fondo-gradiente {
+  background-image: linear-gradient(to bottom, #d1d5db, #ca8a04, #1f2937);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}      
+.glass-effect {
+  backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.btn-gold {
+  background: linear-gradient(315deg, #e6e6e6, #b68c21, #94721c);
+  transition: all 0.3s ease;
+}
+
+.btn-gold:hover {
+  background: linear-gradient(135deg, #FFA500, #FF8C00);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(255, 215, 0, 0.3);
+}
+
+.text-shadow {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.slide-up {
+  animation: slideUp 0.8s ease-out;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(50px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/***Botom***/
+
+
+.neon-card {
+  position: relative;
+  display: inline-block;
+  border-radius: 50px;
+  overflow: hidden;
+  padding: 3px;
+  z-index: 0;
+}
+
+.neon-btn {
+  position: relative;
+  z-index: 2;
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  background-color: #3535356c;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+  backdrop-filter: blur(12px);
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* Responsive para botón neon */
+@media (max-width: 640px) {
+  .neon-btn {
+    padding: 0.6rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+.neon-bg {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 50px;
+  z-index: 1;
+  border: 2px solid white;
+}
+
+.blob {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: #FFD700;
+  opacity: 1;
+  filter: blur(12px);
+  animation: blob-bounce 5s infinite ease;
+}
+
+.neon-blob {
+  position: absolute;
+  z-index: 0;
+  top: 50%;
+  left: 50%;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: #FFD700;
+  opacity: 0.6;
+  filter: blur(18px);
+  animation: blob-bounce 5s infinite ease-in-out;
+}
+
+/* Responsive para blobs */
+@media (max-width: 640px) {
+  .blob {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .neon-blob {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+@keyframes blob-bounce {
+  0% {
+    transform: translate(-100%, -100%) translate3d(0, 0, 0);
+  }
+  25% {
+    transform: translate(-100%, -100%) translate3d(100%, 0, 0);
+  }
+  50% {
+    transform: translate(-100%, -100%) translate3d(100%, 100%, 0);
+  }
+  75% {
+    transform: translate(-100%, -100%) translate3d(0, 100%, 0);
+  }
+  100% {
+    transform: translate(-100%, -100%) translate3d(0, 0, 0);
+  }
+}
+
+/*******Slider logos Herramientas*******/
+.logo-slider {
+  overflow: hidden;
+  padding: 20px 0;
+}
+
+.slide-track {
+  display: flex;
+  width: calc(250px * 20); /* 10 logos × 2 repeticiones */
+  animation: scroll 40s linear infinite;
+}
+
+.slide {
+  width: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  flex-shrink: 0;
+}
+
+.slide img {
+  max-height: 80px;
+  max-width: 100%;
+  filter: grayscale(100%);
+  transition: filter 0.3s;
+}
+
+.slide img:hover {
+  filter: grayscale(0%);
+}
+
+/* Responsive para slider */
+@media (max-width: 768px) {
+  .slide {
+    width: 150px;
+    padding: 0 10px;
+  }
+  
+  .slide img {
+    max-height: 50px;
+  }
+  
+  .slide-track {
+    width: calc(150px * 20);
+  }
+}
+
+@media (max-width: 480px) {
+  .slide {
+    width: 120px;
+    padding: 0 8px;
+  }
+  
+  .slide img {
+    max-height: 40px;
+  }
+  
+  .slide-track {
+    width: calc(120px * 20);
+  }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Video responsive mejorado */
+.video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 768px) {
+  .video-container {
+    padding-bottom: 60%; /* Slightly taller on mobile */
+  }
+}
+
+/* Cards responsive */
+@media (max-width: 768px) {
+  .process-card {
+    margin-bottom: 1.5rem;
+  }
+}
+
+
+    /****Barras*****/
+ .timeline-section {
+  position: relative;
+  z-index: 10;
+  background-image: url('https://res.cloudinary.com/dliredzt9/image/upload/v1750692262/patron_xfaoxy.webp');
+  background-size: cover;
+  background-position: center;
+}
+
+.timeline-wrapper {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem 1rem;
+}
+
+.timeline-left,
+.timeline-right {
+  width: 100%;
+  max-width: 100%;
+  padding: 0 1rem;
+  margin-bottom: 2rem;
+}
+
+.timeline-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+  color: white;
+}
+
+.timeline-description {
+  font-size: 1.125rem;
+  color: #9ca3af;
+}
+
+.highlight {
+  background: linear-gradient(to right, #facc15, #ef4444);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.highlight-white {
+  color: white;
+}
+
+.timeline-right {
+  position: relative;
+}
+
+/* Línea gris fija */
+.timeline-line {
+  position: absolute;
+  top: 0;
+  left: 2.5rem;
+  width: 6px;
+  height: 100%;
+  background-color: rgb(55, 65, 81);
+  border-radius: 2px;
+  z-index: 1;
+  overflow: hidden;
+}
+
+/* Línea de color dinámica (gradiente amarillo-rojo) */
+.timeline-line::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--progress-height, 0%);
+  background: linear-gradient(to bottom, #f56223 0%, #f5bb23 100%);
+  border-radius: 2px;
+  z-index: 2;
+  transition: height 0.3s ease;
+}
+
+.timeline-items {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.timeline-item {
+  display: flex;
+  align-items: flex-start;
+}
+
+.timeline-icon {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1.5rem;
+  background-color: #1f2937;
+  border: 2px solid #374151;
+  transition: all 0.3s ease;
+  z-index: 10;
+  position: relative;
+}
+
+.timeline-icon.active {
+  border-color: #f5bd23;
+  box-shadow: 0 0 20px rgba(239, 68, 68, 0.3);
+}
+
+.timeline-icon img {
+  width: 2.5rem;
+  height: 2.5rem;
+  object-fit: cover;
+}
+
+.timeline-content {
+  flex: 1;
+}
+
+.timeline-phase {
+  font-size: 0.75rem;
+  color: white;
+  padding: 0.25rem 0.75rem;
+  background-color: #ef4444;
+  border-radius: 9999px;
+  display: inline-block;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.timeline-content h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.timeline-content ul {
+  color: #d1d5db;
+  list-style: none;
+  padding-left: 0;
+}
+
+.timeline-content li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.timeline-content .bullet {
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: #f5bb23;
+  border-radius: 9999px;
+  margin-top: 0.5rem;
+  flex-shrink: 0;
+}
+
+/* Botón */
+.timeline-button {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.timeline-btn {
+  background: #ef4444;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 9999px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 0 15px #ef4444;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.timeline-btn:hover {
+  background: #dc2626;
+  transform: scale(1.05);
+}
+
+/* ========== RESPONSIVE ========= */
+
+@media (min-width: 768px) {
+  .timeline-wrapper {
+    padding: 3rem 2rem;
+    gap: 3rem;
+  }
+
+  .timeline-icon {
+    width: 4rem;
+    height: 4rem;
+    margin-right: 2rem;
+  }
+
+  .timeline-content h3 {
+    font-size: 1.5rem;
+  }
+
+  .timeline-left,
+  .timeline-right {
+    padding: 0 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .timeline-line {
+    left: 5rem;
+    width: 6px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .timeline-wrapper {
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 2rem;
+    gap: 4rem;
+  }
+  .timeline-left {
+    width: 50%;
+    margin-bottom: 0;
+    padding-right: 2rem;
+  }
+
+  .timeline-right {
+    width: 60%;
+    padding-left: 3rem;
+    position: relative;
+  }
+
+  .timeline-line {
+    left: 4.4rem;
+    width: 24px;
+  }
+
+  .timeline-title {
+    font-size: 3.65rem;
+  }
+
+  .timeline-icon {
+    width: 4.5rem;
+    height: 4.5rem;
+    margin-right: 3rem;
+  }
+
+  .timeline-content h3 {
+    font-size: 1.75rem;
+  }
+
+  .fase3 {
+    margin-top: 50px;
+  }
+
+	.content3 {
+		padding-top:50px;
+	}
+}
+
+/* MÓVILES: centrar la línea debajo del ícono */
+@media (max-width: 767px) {
+  .timeline-line {
+    left:1.99rem;
+    width: 24px;
+  }
+}
+@media (max-width: 480px) {
+  /* Tus estilos específicos para esta resolución */
+
+  .timeline-line {
+    left:1.99rem;
+    width: 24px;
+  }
+}
+
+    </style>
+  </head>
+<body class="relative min-h-screen bg-gradient-to-r from-black to-[#FFD700]">
+
+  <!-- Capa oscura sobre el contenido (menos el footer) -->
+  <div class="relative z-0">
+    <div class="absolute inset-0 bg-black/90 z-10 pointer-events-none"></div>
+
+<!-- Header -->
+<header class="fixed top-0 left-0 w-full z-50 backdrop-blur bg-white/5 border-b border-white/10">
+  <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center py-3 md:py-4">
+
+      <!-- Logo a la izquierda -->
+      <div class="flex items-center">
+        <div class="logo w-12 h-12 rounded-full flex items-center justify-center">
+          <img src="https://res.cloudinary.com/dliredzt9/image/upload/v1750376445/logo_ithw8g.avif" alt="logo" class="w-full h-full object-contain">
+        </div>
+      </div>
+
+    <!-- Botón hamburguesa (solo visible en móvil) -->
+<button id="menu-toggle" class="md:hidden text-gold text-2xl focus:outline-none p-2 rounded-full">
+  &#9776;
+</button>
+
+
+      <!-- Menú (desktop y móvil) -->
+      <div class="hidden md:flex space-x-6 lg:space-x-8 items-center" id="menu">
+        <a href="#" class="text-white hover:text-gold transition-colors duration-300 font-medium text-sm lg:text-base">Servicios</a>
+        <a href="#" class="text-white hover:text-gold transition-colors duration-300 font-medium text-sm lg:text-base">Recursos Gratuitos</a>
+        <a href="#" class="text-white hover:text-gold transition-colors duration-300 font-medium text-sm lg:text-base">Trabaja Con Nosotros</a>
+        <button class="bg-gradient-to-b from-gray-300 via-yellow-600 to-black/10 text-gray-900 font-semibold px-4 lg:px-6 py-2 rounded-full text-sm lg:text-base whitespace-nowrap">
+          AGENDAR LLAMADA
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Menú móvil desplegable -->
+    <div id="mobile-menu" class="md:hidden hidden flex-col space-y-4 pb-6 px-4">
+      <a href="#" class="text-white block hover:text-gold font-medium py-2">Servicios</a>
+      <a href="#" class="text-white block hover:text-gold font-medium py-2">Recursos Gratuitos</a>
+      <a href="#" class="text-white block hover:text-gold font-medium py-2">Trabaja Con Nosotros</a>
+      <button class="bg-gradient-to-b from-gray-300 via-yellow-600 to-black/10 text-black font-semibold px-6 py-2 rounded-full w-full mt-4">
+        AGENDAR LLAMADA
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- Todo el contenido debe estar dentro de este main -->
+<main class="relative z-20">
+<!-- Hero Section -->
+<section class="relative z-10 min-h-screen flex items-center justify-center px-4 pt-24 sm:pt-28 md:pt-36 pb-2 sm:pb-24">
+  <div class="max-w-4xl mx-auto text-center fade-in w-full">
+    <div class="inline-block bg-gradient-to-b from-gray-100 via-yellow-600 to-gold text-black px-4 sm:px-6 py-2 rounded-full text-xs sm:text-sm font-semibold mb-6 sm:mb-8">
+       Más Ventas - Menos Esfuerzo
+    </div>
+    <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-4 sm:mb-6 text-white"> 
+      Llevamos tus Ventas<br>
+      <span class="gradient-text-h1">al Siguiente Nivel </span>
+    </h1>
+<p class="hero-subtitle text-sm sm:text-lg md:text-lg mb-6 sm:mb-10 text-gray-300 max-w-3xl mx-auto leading-relaxed font-light px-4 sm:px-6">
+  Deja de depender de equipos comerciales ineficientes o improvisados. Es hora de transformar tu presupuesto en resultados reales, <span class="text-gold font-bold">escalar sin límites</span> y convertir cada euro invertido en <span class="text-gold font-bold">ventas automatizadas y predecibles.</span>.
+</p>
+
+
+
+
+     <!-- Hero Video -->
+<div class="w-full bg-gold rounded-lg overflow-hidden border-4 mb-6 sm:mb-8" style="border-color: #FFD700;">
+  <div class="video-container">
+    <iframe 
+      src="https://player.vimeo.com/video/1071240466?h=4e575497d3&autoplay=1&controls=1&loop=0&autopause=0&playsinline=1&muted=1"
+      class="w-full h-full" frameborder="0" allow="autoplay; fullscreen; picture-in-picture">
+    </iframe>
+  </div>
+</div>
+
+    <!-- Boton-->
+    <div class="neon-card mb-8 sm:mb-12">
+      <div class="neon-bg blob"></div>
+      <div class="neon-blob"></div>
+      <a href="#" class="neon-btn">
+        Solicitar Consultoría Gratuita
+      </a>
+    </div>
+          <!-- Separador con imagen -->
+<div class="absolute bottom-0 left-0 w-full pointer-events-none z-0 mt-12">
+  <img src="https://res.cloudinary.com/dliredzt9/image/upload/v1750810387/closeddeals_cover_q6emzh.webp" alt="Separador" class="w-full h-auto object-cover" />
+</div>
+
+    <!-- Slider Infinito de Logos Full Width -->
+    <div class="overflow-hidden py-6 sm:py-2 -mx-4 z-50 -mb-[36px] sm:-mb-[66px] px-24">
+      <div class="logo-slider relative w-full">
+        <div class="slide-track flex animate-scroll whitespace-nowrap ">
+          <!-- Logos originales -->
+     <!-- Logos originales -->
+     <!-- Duplicados para loop infinito -->
+          <div class="slide"><img src="https://res.cloudinary.com/dliredzt9/image/upload/v1750445809/perple_a2akl4.png" class="h-8 sm:h-12 rounded-lg" alt="Apify"></div>
+          <div class="slide"><img src="https://res.cloudinary.com/dliredzt9/image/upload/v1750445806/openia_dzaizv.png" class="h-8 sm:h-12 rounded-lg" alt="Trigify"></div>
+          <div class="slide"><img src="https://res.cloudinary.com/dliredzt9/image/upload/v1750446891/n8n_xft2pb.png" class="h-8 sm:h-12 rounded-lg" alt="Perplexity"></div>
+          <div class="slide"><img src="https://res.cloudinary.com/dliredzt9/image/upload/v1750445795/make_jggxhd.png" class="h-8 sm:h-12 rounded-lg" alt="OpenAI"></div>
+          <div class="slide"><img src="https://res.cloudinary.com/dliredzt9/image/upload/v1750445791/linkeding_y0zert.png" class="h-8 sm:h-12 filter" alt="Clay"></div>
+          <div class="slide"><img src="https://res.cloudinary.com/dliredzt9/image/upload/v1750445787/instantly_yfmfcq.png" class="h-8 sm:h-12 rounded-lg" alt="Apify"></div>
+          <div class="slide"><img src="https://res.cloudinary.com/dliredzt9/image/upload/v1750445784/highlevel_bg2eno.png" class="h-8 sm:h-12 rounded-lg" alt="Trigify"></div>
+          <div class="slide"><img src="https://res.cloudinary.com/dliredzt9/image/upload/v1750445780/fathom_qpzpzu.png" class="h-8 sm:h-12 rounded-lg" alt="Perplexity"></div>
+          <div class="slide"><img src="https://res.cloudinary.com/dliredzt9/image/upload/v1750446867/clay_yx4yxm.png" class="h-8 sm:h-12 rounded-lg" alt="OpenAI"></div>
+          <div class="slide"><img src="https://res.cloudinary.com/dliredzt9/image/upload/v1750608780/apollo.io_s6bdvf.png" class="h-8 sm:h-12 rounded-lg" alt="Clay"></div>
+          <div class="slide"><img src="https://res.cloudinary.com/dliredzt9/image/upload/v1750445769/api_sam2ak.png" class="h-8 sm:h-12 rounded-lg" alt="Apify"></div>
+          <div class="slide"><img src="https://res.cloudinary.com/dliredzt9/image/upload/v1750445766/airtable_ra2yvv.png" class="h-8 sm:h-12 rounded-lg" alt="Trigify"></div>
+          <div class="slide"><img src="https://res.cloudinary.com/dliredzt9/image/upload/v1750445798/meta_ldycxl.png" class="h-8 sm:h-12 rounded-lg" alt="Perplexity"></div>
+          
+          
+          <!-- Duplicados para loop infinito -->
+     <div class="slide"><img src="https://res.cloudinary.com/dliredzt9/image/upload/v1750445813/trify_wspqvr.png" class="h-8 sm:h-12 rounded-lg" alt="Clay"></div>
+          <div class="slide"><img src="https://res.cloudinary.com/dliredzt9/image/upload/v1750445809/perple_a2akl4.png" class="h-8 sm:h-12 rounded-lg" alt="Apify"></div>
+          <div class="slide"><img src="https://res.cloudinary.com/dliredzt9/image/upload/v1750445806/openia_dzaizv.png" class="h-8 sm:h-12 rounded-lg" alt="Trigify"></div>
+          <div class="slide"><img src="https://res.cloudinary.com/dliredzt9/image/upload/v1750446891/n8n_xft2pb.png" class="h-8 sm:h-12 rounded-lg" alt="Perplexity"></div>
+          <div class="slide"><img src="https://res.cloudinary.com/dliredzt9/image/upload/v1750445795/make_jggxhd.png" class="h-8 sm:h-12 rounded-lg" alt="OpenAI"></div>
+          <div class="slide"><img src="https://res.cloudinary.com/dliredzt9/image/upload/v1750445791/linkeding_y0zert.png" class="h-8 sm:h-12 filter" alt="Clay"></div>
+          <div class="slide"><img src="https://res.cloudinary.com/dliredzt9/image/upload/v1750445787/instantly_yfmfcq.png" class="h-8 sm:h-12 rounded-lg" alt="Apify"></div>
+          <div class="slide"><img src="https://res.cloudinary.com/dliredzt9/image/upload/v1750445784/highlevel_bg2eno.png" class="h-8 sm:h-12 rounded-lg" alt="Trigify"></div>
+          <div class="slide"><img src="https://res.cloudinary.com/dliredzt9/image/upload/v1750445780/fathom_qpzpzu.png" class="h-8 sm:h-12 rounded-lg" alt="Perplexity"></div>
+          <div class="slide"><img src="https://res.cloudinary.com/dliredzt9/image/upload/v1750446867/clay_yx4yxm.png" class="h-8 sm:h-12 rounded-lg" alt="OpenAI"></div>
+          <div class="slide"><img src="https://res.cloudinary.com/dliredzt9/image/upload/v1750608780/apollo.io_s6bdvf.png" class="h-8 sm:h-12 rounded-lg" alt="Clay"></div>
+          <div class="slide"><img src="https://res.cloudinary.com/dliredzt9/image/upload/v1750445769/api_sam2ak.png" class="h-8 sm:h-12 rounded-lg" alt="Apify"></div>
+          <div class="slide"><img src="https://res.cloudinary.com/dliredzt9/image/upload/v1750445766/airtable_ra2yvv.png" class="h-8 sm:h-12 rounded-lg" alt="Trigify"></div>
+          <div class="slide"><img src="https://res.cloudinary.com/dliredzt9/image/upload/v1750445798/meta_ldycxl.png" class="h-8 sm:h-12 rounded-lg" alt="Perplexity"></div>
+          
+          
+        </div>
+      </div>
+ 
+
+    </div>
+</section>
+
+<section id="quienes-somos" class="relative bg-[url('https://res.cloudinary.com/dliredzt9/image/upload/v1750889569/patron_nosotros_mxk1sr.webp')] bg-cover bg-center py-12">
+  <!-- Capa oscura degradada desde abajo -->
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+
+
+  <!-- Título y párrafo intro -->
+  <div class="relative z-10 px-2 text-center max-w-3xl mx-auto pt-8">
+    <h2 class="section-title text-3xl sm:text-4xl lg:text-5xl font-black mb-6 sm:mb-8 fondo-gradiente pb-2">
+      ¿QUIÉNES SOMOS?
+    </h2>
+    <p class="font-black text-base sm:text-lg lg:text-lg text-gray-300 leading-relaxed pb-8  ">
+      Tras años como consultores independientes generando resultados para clientes como decidimos dar un nombre a nuestra trayectoria Construida con resultados:
+
+    </p>
+  </div>
+
+<!-- Estadística -->
+<div class="relative z-10 max-w-5xl mx-auto p-6 sm:p-8 text-center">
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
+
+    <!-- Facturación -->
+    <div>
+      <div id="facturacion" 
+           class="stats-number text-5xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold 
+                  bg-gradient-to-b from-gray-300 via-yellow-600 to-gray-300 bg-clip-text text-transparent 
+                  mb-1 sm:mb-2 flex items-center justify-center" 
+           data-count="3000000">
+        0
+        <span class="inline-flex items-center ml-2 text-5xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold fondo-gradiente">
+          M
+          <img class="w-7 h-7 sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 xl:w-9 xl:h-9 2xl:w-10 2xl:h-10 ml-1 inline-block" />
+        </span>
+      </div>
+
+      <div class="text-gray-300 text-base sm:text-sm sm:px-2 px-8 leading-relaxed font-medium">
+        Millones <b class="text-gold">€</b> de Facturación Generada
+      </div>
+    </div>
+
+    <!-- Nuevas ventas -->
+    <div>
+      <div class="stats-number text-5xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold 
+                  bg-gradient-to-b from-gray-300 via-yellow-600 to-gray-300 bg-clip-text text-transparent 
+                  mb-1 sm:mb-2 flex items-center justify-center" 
+           data-count="37" data-suffix="%">0</div>
+
+      <div class="text-gray-300 text-base sm:text-sm sm:px-2 px-8 leading-relaxed font-medium">
+        Promedio <b class="text-gold">Nuevas Ventas</b> Cerradas
+      </div>
+    </div>
+
+    <!-- Reducción de tiempos -->
+    <div>
+      <div class="stats-number text-5xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold 
+                  bg-gradient-to-b from-gray-300 via-yellow-600 to-gray-300 bg-clip-text text-transparent 
+                  mb-1 sm:mb-2 flex items-center justify-center" 
+           data-count="29" data-suffix="%">0</div>
+
+      <div class="text-gray-300 text-base sm:text-sm sm:px-2 px-8 leading-relaxed font-medium">
+        <b class="text-gold">Reducción de Tiempos</b> Operativos
+      </div>
+    </div>
+
+    <!-- Logo en móviles -->
+    <div class="block sm:hidden mt-8 col-span-1">
+      <img src="https://res.cloudinary.com/dliredzt9/image/upload/v1750697787/Closed_Deals_pkrvjq.png" alt="logo" class="w-32 mx-auto object-contain" />
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+  <!-- What is Closed Deals -->
+  <div class="relative z-10  sm:py-2 px-4">
+    <div class="max-w-7xl mx-auto">
+  
+
+
+  
+
+
+      <div class="grid lg:grid-cols-2 gap-8 sm:gap-16 items-center">
+        <!-- Imagen -->
+    
+<div class="flex items-center justify-center flex-col">
+  <img src="https://res.cloudinary.com/dliredzt9/image/upload/v1750857994/nosotros_oidhll.webp" alt="intro" class="rounded-lg w-3/4 sm:w-full max-w-xs sm:max-w-md lg:max-w-none" />
+
+</div>
+
+
+
+
+        
+        <!-- Texto + iconos -->
+        <div class="flex flex-col items-center lg:items-start text-center lg:text-left order-1 lg:order-2 max-w-4xl mx-auto px-4 sm:px-6 lg:px-0">
+      <div class="max-w-7xl mx-auto">
+   <h2 class="section-title text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black mb-6 sm:mb-8 text-shadow text-center text-white leading-snug sm:leading-snug md:leading-normal lg:leading-tight">
+  <span class="block text-left text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mt-6 sm:mt-8 text-white leading-tight">
+  Closed Deals
+</span>
+
+</h2>
+          <p class="text-base sm:text-lg lg:text-xl text-gray-300 mb-2 sm:mb-4 leading-relaxed max-w-prose text-center lg:text-left pr-0 sm:pr-24">
+            <b class="text-gold">SOMOS</b> una consultora especializada en escalado comercial y automatización de procesos.
+            <span class="block text-lg lg:text-xl text-gold font-semibold mt-3 font-bold">
+  NACIMOS CON UNA MISIÓN CLARA
+</span>
+          </p>
+
+  <p class="text-base sm:text-lg lg:text-xl text-gray-300 mb-6 sm:mb-8 leading-relaxed pr-2 sm:pr-4 md:pr-6">
+  
+   <span class="text-base font-bold">"Ayudar a empresas a conseguir más clientes<br> con menos esfuerzo operativo".
+</span>
+
+<br><br>
+
+  <strong class="text-gold"><span class="uppercase">Diseñamos</span> las soluciones que impulsan</strong> la captación como la conversión de clientes potenciales, así como
+  <strong class="text-gold uppercase">Automatizamos tareas manuales y repetitivas</strong> para que puedas poner el foco en lo verdaderamente importante: <b class="underline underline-offset-4 decoration-2">CERRAR</b>
+</p>
+
+
+<!-- Iconos -->
+<div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 2xl:grid-cols-4 gap-6 mt-8 text-center w-full
+            pl-2 pr-4 sm:pr-8 md:pr-12 lg:pr-16 xl:pr-24 2xl:pr-32">
+
+  
+  <div class="min-w-[140px] sm:min-w-0 flex-shrink-0 sm:flex-shrink 
+              p-4 rounded-lg  flex flex-col items-center">
+    <svg class="lucide lucide-funnel w-12 h-12 btn-gold p-4 rounded-lg" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+      <path d="M10 20a1 1 0 0 0 .553.895l2 1A1 1 0 0 0 14 21v-7a2 2 0 0 1 .517-1.341L21.74 4.67A1 1 0 0 0 21 3H3a1 1 0 0 0-.742 1.67l7.225 7.989A2 2 0 0 1 10 14z"/>
+    </svg>
+    <p class="text-xs sm:text-sm text-gray-200 mt-2 font-bold text-shadow">Calificación</p>
+  </div>
+
+  <div class="min-w-[140px] sm:min-w-0 flex-shrink-0 sm:flex-shrink  
+              p-4 rounded-lg  flex flex-col items-center">
+    <svg class="lucide lucide-trending-up w-12 h-12 btn-gold p-4 rounded-lg" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+      <path d="M16 7h6v6"/>
+      <path d="m22 7-8.5 8.5-5-5L2 17"/>
+    </svg>
+    <p class="text-xs sm:text-sm text-gray-200 mt-2 font-bold text-shadow">Escalable</p>
+  </div>
+
+  <div class="min-w-[140px] sm:min-w-0 flex-shrink-0 sm:flex-shrink 
+              p-4 rounded-lg flex flex-col items-center">
+    <svg class="lucide lucide-users w-12 h-12 btn-gold p-4 rounded-lg" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+      <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+      <path d="M16 3.128a4 4 0 0 1 0 7.744"/>
+      <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+      <circle cx="9" cy="7" r="4"/>
+    </svg>
+    <p class="text-xs sm:text-sm text-gray-200 mt-2 font-bold text-shadow">Equipo</p>
+  </div>
+
+  <div class="min-w-[140px] sm:min-w-0 flex-shrink-0 sm:flex-shrink
+              p-4 rounded-lg flex flex-col items-center">
+    <svg class="lucide lucide-crosshair w-12 h-12 btn-gold p-4 rounded-lg" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="10"/>
+      <line x1="22" x2="18" y1="12" y2="12"/>
+      <line x1="6" x2="2" y1="12" y2="12"/>
+      <line x1="12" x2="12" y1="6" y2="2"/>
+      <line x1="12" x2="12" y1="22" y2="18"/>
+    </svg>
+    <p class="text-xs sm:text-sm text-gray-200 mt-2 font-bold text-shadow">Enfoque</p>
+  </div>
+
+</div>
+
+
+
+
+
+     
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- barra -->
+<section class="timeline-section py-12 px-4 sm:px-8">
+  <div class="timeline-wrapper max-w-7xl mx-auto flex flex-col lg:flex-row gap-8">
+    <!-- Columna izquierda -->
+    <div class="timeline-left lg:w-2/5">
+      <h2 class="timeline-title text-4xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-6 leading-tight">
+        ¿Cómo <span class="fondo-gradiente">trabajamos?</span>
+      </h2>
+      <p class="timeline-description text-gray-300 text-lg leading-relaxed">
+        La metodología que convierte tu trabajo en resultados predecibles:<br>
+        <span class="highlight-white text-white font-semibold">Más ingresos, menos esfuerzo operativo.</span>
+      </p>
+      <img class="rounded-lg mt-6" src="https://res.cloudinary.com/dliredzt9/image/upload/v1750817558/chess_gnyut4.webp" alt="people">
+      <img class="rounded-lg mt-6 hidden sm:block" src="https://res.cloudinary.com/dliredzt9/image/upload/v1750817769/people_mg31g9.webp" alt="people">
+    </div>
+
+    <!-- Columna derecha -->
+    <div class="timeline-right relative lg:w-3/5">
+      <div id="timelineLine" class="timeline-line absolute top-0 w-6 h-full bg-gray-700 rounded-sm z-0 overflow-hidden left-11 transform -translate-x-1/2 lg:left-16 lg:transform-none"></div>
+
+      <div class="timeline-items flex flex-col gap-8 relative z-10">
+
+        <!-- FASE 1 -->
+        <div class="timeline-item flex items-start gap-6">
+          <div class="timeline-icon active w-14 h-14 rounded-md bg-gray-800 border-2 border-yellow-400 shadow-lg flex items-center justify-center relative z-10">
+            <!-- Ícono SVG -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-funnel">
+              <path d="M10 20a1 1 0 0 0 .553.895l2 1A1 1 0 0 0 14 21v-7a2 2 0 0 1 .517-1.341L21.74 4.67A1 1 0 0 0 21 3H3a1 1 0 0 0-.742 1.67l7.225 7.989A2 2 0 0 1 10 14z"/>
+            </svg>
+          </div>
+          <div class="timeline-content flex-1 mb-0 sm:mb-3">
+            <div class="timeline-phase inline-block bg-gradient-to-b from-gray-300 via-yellow-600 to-black/10 rounded-full text-xs font-semibold">FASE 1</div>
+            <h3 class="text-xl font-bold">Consultoría y Auditoría</h3>
+            <ul class="list-none text-gray-300 space-y-2">
+              <li><span class="bullet inline-block w-2 h-2 rounded-full"></span>Analizamos tus procesos y sistemas actuales.</li>
+              <li><span class="bullet inline-block w-2 h-2 rounded-full"></span>Detectamos cuellos de botella y oportunidades.</li>
+              <li><span class="bullet inline-block w-2 h-2 rounded-full"></span>Informe sobre mejoras en marketing y ventas.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- FASE 2 -->
+        <div class="timeline-item flex items-start gap-6 mt-6">
+          <div class="timeline-icon w-14 h-14 rounded-md bg-gray-800 border-2 border-gray-600 flex items-center justify-center relative z-10">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-crosshair">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="22" x2="18" y1="12" y2="12"/>
+              <line x1="6" x2="2" y1="12" y2="12"/>
+              <line x1="12" x2="12" y1="6" y2="2"/>
+              <line x1="12" x2="12" y1="22" y2="18"/>
+            </svg>
+          </div>
+          <div class="timeline-content content2 flex-1 mb-0 sm:mb-3">
+            <div class="timeline-phase inline-block bg-gradient-to-b from-gray-300 via-yellow-600 to-black/10 rounded-full  text-xs font-semibold">FASE 2</div>
+            <h3 class="text-xl font-bold">Diseño Estratégico</h3>
+            <ul class="list-none text-gray-300 space-y-2">
+              <li><span class="bullet inline-block w-2 h-2 rounded-full"></span>Diseñamos una estrategia 100% personalizada.</li>
+              <li><span class="bullet inline-block w-2 h-2 rounded-full"></span>Definimos herramientas y procesos a implementar.</li>
+              <li><span class="bullet inline-block w-2 h-2 rounded-full"></span>Estructuramos un plan de acción con fechas y beneficios claros.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- FASE 3 -->
+        <div class="timeline-item flex items-start gap-6">
+          <div class="timeline-icon fase3 w-14 h-14 rounded-md bg-gray-800 border-2 border-gray-600 flex items-center justify-center relative z-10">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users">
+              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+              <path d="M16 3.128a4 4 0 0 1 0 7.744"/>
+              <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+              <circle cx="9" cy="7" r="4"/>
+            </svg>
+          </div>
+          <div class="timeline-content content3 flex-1 mb-0 sm:mb-3">
+            <div class="timeline-phase inline-block bg-gradient-to-b from-gray-300 via-yellow-600 to-black/10 rounded-full  text-xs font-semibold">FASE 3</div>
+            <h3 class="text-xl font-bold">Integración con tu Ecosistema</h3>
+            <ul class="list-none text-gray-300 space-y-2">
+              <li><span class="bullet inline-block w-2 h-2 rounded-full"></span>Desarrollo de soluciones acordadas.</li>
+              <li><span class="bullet inline-block w-2 h-2 rounded-full"></span>Integración de soluciones y sistemas en tu modelo operativo.</li>
+              <li><span class="bullet inline-block w-2 h-2 rounded-full"></span>Automatización de procesos manuales y repetitivos.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- FASE 4 -->
+        <div class="timeline-item flex items-start gap-6">
+          <div class="timeline-icon fase3 w-14 h-14 rounded-md bg-gray-800 border-2 border-gray-600 flex items-center justify-center relative z-10">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trending-up">
+              <path d="M16 7h6v6"/>
+              <path d="m22 7-8.5 8.5-5-5L2 17"/>
+            </svg>
+          </div>
+          <div class="timeline-content content3 flex-1  mb-0 sm:mb-3">
+            <div class="timeline-phase inline-block bg-gradient-to-b from-gray-300 via-yellow-600 to-black/10 rounded-full text-xs font-semibold ">FASE 4</div>
+            <h3 class="text-xl font-bold">Optimización y Escalabilidad</h3>
+            <ul class="list-none text-gray-300 space-y-2">
+              <li><span class="bullet inline-block w-2 h-2 rounded-full"></span> Monitoreo de datos para mejorar la toma de decisiones.</li>
+              <li><span class="bullet inline-block w-2 h-2 rounded-full"></span> Estudio de rendimientos en marketing y ventas.</li>
+              <li><span class="bullet inline-block w-2 h-2 rounded-full"></span> Soporte técnico y acompañamiento comercial.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- FASE 5 -->
+        <div class="timeline-item flex items-start gap-6">
+          <div class="timeline-icon w-14 h-14 rounded-md bg-gray-800 border-2 border-gray-600 flex items-center justify-center relative z-10">
+            <img src="https://res.cloudinary.com/dliredzt9/image/upload/v1750376445/logo_ithw8g.avif" alt="logo" class="object-cover w-10 h-10 rounded-md" />
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+    </div>
+</section>
+ 
+ <!-- Botón -->
+      <div class="mt-8 text-center">
+        <div class="neon-card">
+          <div class="neon-bg blob"></div>
+          <div class="neon-blob"></div>
+          <a href="#" class="neon-btn">Solicitar Consultoría Gratuita</a>
+        </div>
+      </div>
+</main>
+ 
+  
+    <!-- Footer -->
+    <footer class="relative z-10 glass-effect py-12 px-4 mt-20">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center mb-4 md:mb-0">
+                    <div class="w-12 h-12  rounded-full flex items-center justify-center mr-4">
+                        <img src="https://res.cloudinary.com/dliredzt9/image/upload/v1750376445/logo_ithw8g.avif" alt="logo">
+                    </div>
+                    </div>
+                
+                <div class="text-center md:text-right">
+                    <p class="text-gray-400 text-sm mb-2">
+                        Contacta con nosotros al proporcionar tu información, acepta los de
+                        la Política de Privacidad y las Condiciones de Uso.
+                    </p>
+                    <p class="text-gray-500 text-xs">
+                        © 2025 Closed Deals. Todos los derechos reservados.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="mt-8 pt-8 border-t border-gray-700 text-center">
+                <div class="flex justify-center space-x-8 text-sm text-gray-400">
+                    <a href="#" class="hover:text-gold transition-colors">Aviso Legal</a>
+                    <a href="#" class="hover:text-gold transition-colors">Términos y Condiciones</a>
+                    <a href="#" class="hover:text-gold transition-colors">Política de Privacidad</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // Menú hamburguesa
+    const toggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (toggle && mobileMenu) {
+      toggle.addEventListener('click', () => {
+        const isOpen = mobileMenu.classList.contains('hidden');
+        mobileMenu.classList.toggle('hidden');
+        toggle.innerHTML = isOpen ? '&times;' : '&#9776;';
+      });
+    }
+
+    // Smooth scroll en anclas
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+
+    // Animación de entrada con Intersection Observer
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('slide-up');
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.slide-up').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Hover dorado en botones
+    document.querySelectorAll('.btn-gold').forEach(btn => {
+      btn.addEventListener('mouseenter', function () {
+        this.style.transform = 'translateY(-2px)';
+        this.style.boxShadow = '0 10px 25px rgba(245, 187, 35, 0.3)';
+      });
+
+      btn.addEventListener('mouseleave', function () {
+        this.style.transform = 'translateY(0)';
+        this.style.boxShadow = 'none';
+      });
+    });
+
+    // === CONTADOR AL HACER SCROLL ===
+    let activeAnimations = new Map();
+    let isAnimating = false;
+
+    function animateCount(el, end, duration = 2000, suffix = '') {
+      if (activeAnimations.has(el)) {
+        cancelAnimationFrame(activeAnimations.get(el));
+      }
+
+      let start = 0;
+      let step = Math.ceil(end / (duration / 16));
+      let current = start;
+
+      function update() {
+        current += step;
+        if (current >= end) {
+          current = end;
+        }
+
+        if (end >= 1000000) {
+          el.innerHTML = `
+            <span class="inline-flex items-center space-x-1">
+              <span>${(current / 1000000).toFixed(1)}M</span>
+              <img src="https://res.cloudinary.com/dliredzt9/image/upload/v1750731042/up-flecha_y6vqx1.png" alt="up" style="height:1em; width:auto; vertical-align: middle;" />
+            </span>
+          `;
+        } else {
+          el.textContent = Math.floor(current) + suffix;
+        }
+
+        if (current < end) {
+          const animationId = requestAnimationFrame(update);
+          activeAnimations.set(el, animationId);
+        } else {
+          activeAnimations.delete(el);
+        }
+      }
+
+      const animationId = requestAnimationFrame(update);
+      activeAnimations.set(el, animationId);
+    }
+
+    function resetCounters() {
+      activeAnimations.forEach((animationId, el) => {
+        cancelAnimationFrame(animationId);
+      });
+      activeAnimations.clear();
+
+      const counters = document.querySelectorAll('[data-count]');
+      counters.forEach(el => {
+        const countTo = parseInt(el.getAttribute('data-count'), 10);
+        const suffix = el.getAttribute('data-suffix') || '';
+
+        if (countTo >= 1000000) {
+          el.innerHTML = `
+            <span class="inline-flex items-center space-x-1">
+              <span>0.0M</span><img src="https://res.cloudinary.com/dliredzt9/image/upload/v1750731042/up-flecha_y6vqx1.png" alt="up" style="height:1em; width:auto; vertical-align: middle;" />
+            </span>
+          `;
+        } else {
+          el.textContent = '0' + suffix;
+        }
+      });
+
+      isAnimating = false;
+    }
+
+    function startCounters() {
+      if (isAnimating) return;
+
+      isAnimating = true;
+      const counters = document.querySelectorAll('[data-count]');
+      counters.forEach(el => {
+        const countTo = parseInt(el.getAttribute('data-count'), 10);
+        const suffix = el.getAttribute('data-suffix') || '';
+        animateCount(el, countTo, 2000, suffix);
+      });
+    }
+
+    // FIX CRUCIAL: delay para asegurar que todo esté cargado
+    const targetSection = document.getElementById('quienes-somos');
+    if (targetSection) {
+      setTimeout(() => {
+        const counterObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              startCounters();
+            } else {
+              resetCounters();
+            }
+          });
+        }, {
+          threshold: 0.2,
+          rootMargin: '0px'
+        });
+
+        counterObserver.observe(targetSection);
+      }, 300);
+    }
+
+    // ====== BARRA FASES ======
+   const line = document.getElementById('timelineLine');
+  const items = Array.from(document.querySelectorAll('.timeline-item'));
+
+  let targetProgress = 0;
+  let currentProgress = 0;
+
+  function lerp(start, end, t) {
+    return start + (end - start) * t;
+  }
+
+  function updateLine() {
+    currentProgress = lerp(currentProgress, targetProgress, 0.03); // Más lento y fluido
+    line.style.setProperty('--progress-height', `${currentProgress}%`);
+
+    items.forEach((item, index) => {
+      const icon = item.querySelector('.timeline-icon');
+      if (index <= Math.floor((currentProgress / 100) * (items.length - 1))) {
+        icon.classList.add('active');
+      } else {
+        icon.classList.remove('active');
+      }
+    });
+
+    if (Math.abs(currentProgress - targetProgress) > 0.1) {
+      requestAnimationFrame(updateLine);
+    }
+  }
+
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY + window.innerHeight / 2;
+    let activeIndex = -1;
+
+    for (let i = 0; i < items.length; i++) {
+      const itemTop = items[i].getBoundingClientRect().top + window.scrollY;
+      if (scrollY >= itemTop) {
+        activeIndex = i;
+      } else {
+        break;
+      }
+    }
+
+    const perPhase = 100 / (items.length - 1);
+    targetProgress = activeIndex >= 0 ? perPhase * activeIndex : 0;
+    if (activeIndex === items.length - 1) targetProgress = 100;
+
+    requestAnimationFrame(updateLine);
+  });
+
+  line.style.setProperty('--progress-height', '0%');
+  updateLine();
+});
+
+</script>
+
+
+
+
+</body>
+</html>
